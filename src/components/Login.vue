@@ -1,10 +1,14 @@
 <template>
 <div>
-<div>{{ msg }}</div>
-<input type="text" placeholder="name"  v-model="name">
-<input type="text" placeholder="passWord" v-model="passWord">
-<button @click="redirct">登陆</button>
-<button @click="check">check</button>
+<el-row :gutter="20" style="margin-bottom: 10px;">
+  <el-col :span="4" :offset="10"><el-input v-model="name" placeholder="请输入用户名"></el-input></el-col>
+</el-row>
+<el-row :gutter="20" style="margin-bottom: 10px;">
+  <el-col :span="4" :offset="10"><el-input  placeholder="请输入密码" v-model="passWord"></el-input></el-col>
+</el-row>
+<el-row :gutter="20">
+  <el-col :span="2" :offset="11"><el-button type="success" @click="redirct" round>登陆</el-button></el-col>
+</el-row>
 </div>
 </template>
 
@@ -14,8 +18,8 @@ export default {
   name: 'Login',
   data () {
     return {
-      msg: 'Login Page',
       name: '',
+      passWord: ''
     }
   },
   computed:{
