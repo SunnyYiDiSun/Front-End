@@ -2,7 +2,7 @@
 
   <el-container>
     <el-header>
-      <h1>忆往昔</h1>
+      <h1 class="centerText">忆往昔</h1>
     </el-header>
     <el-main>
       <div>
@@ -83,6 +83,10 @@ export default {
 <style scoped>
   .rowSpacing {
     margin-bottom: 10px;
+  }
+  .centerText {
+
+    text-align: center;
   }
 
 </style>

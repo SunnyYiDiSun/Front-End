@@ -1,22 +1,39 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Login from '@/components/Login'
-import Hello from '@/components/HelloWorld'
-
+import Home from '@/components/Home'
+import PicCarousel from '@/components/PicCarousel'
+import UserTable from '@/components/User/User'
 Vue.use(Router);
 
-const  routers= [{  path: '/login',
+const  routers= [{  path: '/',
                     name: 'Login',
                     component: Login,
                     meta:{
                       isRequireAuthTrue:false
                     }
                   },
-                  {path: '/hello',
-                    name: 'Hello',
-                    component: Hello,
+                  {path: '/hom',
+                    name: 'Home',
+                    component: Home,
+                    children:[
+                      {
+                        path:"PicCarousel",
+                        component:PicCarousel,
+                        meta:{
+                        isRequireAuthTrue:false
+                        }
+                      },
+                      {
+                        path:"UserTable",
+                        component:UserTable,
+                        meta:{
+                        isRequireAuthTrue:false
+                        }
+                      }
+                    ],
                     meta:{
-                      isRequireAuthTrue:true
+                      isRequireAuthTrue:false
                     }
                   }];
 const router=new Router({
